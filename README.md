@@ -171,7 +171,18 @@ DEEZER_DOWNLOADER_CONFIG_FILE=settings.ini poetry run pytest -v -s
 ### Deployment with Ansible (including mpd and ympd)
 https://github.com/kmille/music-ansible (almost always outdated)
 
+### FAQ
 
+#### Deezer-downloader & Pi-Hole
+
+[Source](https://github.com/kmille/deezer-downloader/issues/61) from @dejan995
+
+Deezer-Downloader has sometimes problem connecting, most of the times it seems that Pi-Hole is the Problem. The sollution is to disable Pi-Hole for the device running Deezer-Downloader.
+
+> 1. In PiHole, under Group Managment/Groups create a specific group. (I named mine Servers)
+> 2. In PiHole, under Group Managment/Clients find your server MAC and IP address and add it as a client (By server I mean the machine that deezer-downloader is running on. This can be the Docker Host machine or even your PC)
+> 3. On the same screen, after the Client is added, assign it to the group created in step nr. 1.
+> 4. Go back in Group Managment/Groups and tick the Enable/Disable option to Disable the PiHole blocking for that group.
 
 ### Changelog
 
